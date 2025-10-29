@@ -1,0 +1,34 @@
+# Todo List Manager
+
+make tasks with []
+let running be 1
+
+while running is 1:
+    whisper "\n=== Todo List ==="
+    whisper "1. Add task"
+    whisper "2. Show tasks"
+    whisper "3. Delete task"
+    whisper "4. Exit"
+    
+    ask "Choose option:" into choice
+    
+    when choice is 1:
+        ask "Enter task:" into task
+        add task to tasks
+        whisper "Task added!"
+    
+    or when choice is 2:
+        whisper "\nYour tasks:"
+        let count be 1
+        for each task in tasks:
+            show count + ". " + task
+            increase count by 1
+    
+    or when choice is 3:
+        ask "Enter task to delete:" into del_task
+        remove del_task from tasks
+        whisper "Task deleted!"
+    
+    or when choice is 4:
+        set running to 0
+        whisper "Goodbye!"

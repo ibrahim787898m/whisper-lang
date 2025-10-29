@@ -1,0 +1,58 @@
+{
+  "name": "whisper-lang-support",
+  "displayName": "Whisper Language Support",
+  "description": "Syntax highlighting and language support for Whisper - A conversational programming language",
+  "icon": "images/whisper-icon.png",
+  "version": "1.0.0",
+  "license": "MIT",
+  "publisher": "ibrahimmustafaopu",
+  "author": "Ibrahim Mustafa Opu",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ibrahim787898m/whisper-lang"
+  },
+  "homepage": "https://whisper.ibrahimmustafaopu.com",
+  "bugs": {
+    "url": "https://github.com/ibrahim787898m/whisper-lang/issues"
+  },
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "keywords": [
+    "whisper",
+    "programming",
+    "conversational",
+    "natural language",
+    "syntax highlighting"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "whisper",
+        "aliases": [
+          "Whisper",
+          "whisper"
+        ],
+        "extensions": [
+          ".whisper",
+          ".wsp"
+        ],
+        "icon": {
+          "light": "./images/whisper-icon.png",
+          "dark": "./images/whisper-icon.png"
+        },
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "whisper",
+        "scopeName": "source.whisper",
+        "path": "./syntaxes/whisper.tmLanguage.json"
+      }
+    ]
+  }
+}

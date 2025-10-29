@@ -1,0 +1,7 @@
+# Hello World - Your First Whisper Program
+
+whisper "Hello, World!"
+whisper "Welcome to Whisper programming!"
+
+show "This language is conversational and fun!"
+tell me "You're going to love it!"

@@ -1,0 +1,52 @@
+# Interactive Story Adventure
+
+whisper "=== The Enchanted Forest ==="
+whisper "You stand at the entrance of a mysterious forest."
+whisper "Two paths lie before you..."
+
+ask "Take the LEFT path or RIGHT path?" into choice
+
+when choice is "LEFT":
+    whisper "\nYou walk down the shadowy left path."
+    whisper "You encounter a wise old wizard!"
+    
+    ask "Do you TALK to him or IGNORE him?" into action
+    
+    when action is "TALK":
+        whisper "\nThe wizard smiles and gives you a magical amulet!"
+        whisper "'This will protect you,' he says."
+        whisper "✨ You gained: Magic Amulet"
+        whisper "🎉 GOOD ENDING: You made a powerful ally!"
+    
+    otherwise:
+        whisper "\nYou walk past the wizard."
+        whisper "He looks disappointed and disappears."
+        whisper "😔 NEUTRAL ENDING: You missed an opportunity."
+
+or when choice is "RIGHT":
+    whisper "\nYou take the bright right path."
+    whisper "You discover a clearing with a treasure chest!"
+    
+    ask "Do you OPEN it or LEAVE it?" into action
+    
+    when action is "OPEN":
+        let trap be randint(1, 2)
+        
+        when trap is 1:
+            whisper "\n💰 The chest contains gold coins!"
+            whisper "🎉 BEST ENDING: You're rich!"
+        otherwise:
+            whisper "\n💥 It was a trap! Poison gas fills the air!"
+            whisper "☠️ BAD ENDING: Game Over"
+    
+    otherwise:
+        whisper "\nYou wisely leave the suspicious chest."
+        whisper "You find a safe path home."
+        whisper "✅ SAFE ENDING: You survived!"
+
+otherwise:
+    whisper "\nYou stand frozen, unable to decide."
+    whisper "The forest grows dark around you..."
+    whisper "😨 CONFUSED ENDING: You got lost!"
+
+whisper "\nThanks for playing!"

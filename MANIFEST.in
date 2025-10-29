@@ -1,0 +1,8 @@
+include README.md
+include LICENSE
+include DOCUMENTATION.md
+include CHANGELOG.md
+include requirements.txt
+recursive-include examples *.wsp
+recursive-include tests *.wsp
+recursive-include .vscode *.json *.png

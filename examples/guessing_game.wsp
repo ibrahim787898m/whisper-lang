@@ -1,0 +1,22 @@
+# Number Guessing Game
+
+let secret be randint(1, 100)
+let attempts be 0
+let max_attempts be 10
+
+whisper "=== Guess the Number ==="
+whisper "I'm thinking of a number between 1 and 100"
+
+while attempts less than max_attempts:
+    ask "Your guess:" into guess
+    increase attempts by 1
+    
+    when guess is secret:
+        whisper "Attempts taken: " + attempts
+        stop
+    or when guess less than secret:
+        whisper "Too low! Try again."
+    otherwise:
+        whisper "Too high! Try again."
+
+whisper "Thanks for playing!"

@@ -1,0 +1,84 @@
+# Complete RPG Dragon Battle
+
+there is a player with health 100, attack 20, potions 3, gold 0
+there is a dragon with health 150, attack 25, treasure 500
+
+whisper "==================================="
+whisper "🐉 DRAGON BATTLE RPG"
+whisper "==================================="
+whisper "A fearsome dragon blocks your path!"
+whisper "Defeat it to claim its treasure!"
+whisper "\n"
+
+while player health greater than 0 and dragon health greater than 0:
+    # Display status
+    whisper "-----------------------------------"
+    show "⚔️  Your Health: " + player health + " HP"
+    show "🧪 Potions: " + player potions
+    show "🐉 Dragon Health: " + dragon health + " HP"
+    whisper "-----------------------------------"
+    
+    # Player turn
+    whisper "\nWhat will you do?"
+    whisper "1. Attack"
+    whisper "2. Use Potion"
+    whisper "3. Defend"
+    
+    ask "Choose action (1-3):" into action
+    
+    let defended be 0
+    
+    when action is 1:
+        let damage be randint(15, 25)
+        the dragon loses damage health
+        whisper "\n⚔️  You attack for " + damage + " damage!"
+    
+    or when action is 2:
+        when player potions greater than 0:
+            the player gains 30 health
+            the player loses 1 potions
+            whisper "\n🧪 You drink a potion and restore 30 HP!"
+            
+            when player health greater than 100:
+                set player health to 100
+        otherwise:
+            whisper "\n❌ No potions left!"
+    
+    or when action is 3:
+        set defended to 1
+        whisper "\n🛡️  You brace for the dragon's attack!"
+    
+    otherwise:
+        whisper "\n❓ Invalid action! You stand confused!"
+    
+    # Check if dragon defeated
+    is dragon health less than 1?
+        yes:
+            whisper "\n🎉 VICTORY!"
+            whisper "The mighty dragon falls!"
+            the player gains 500 gold
+            whisper "💰 You obtained " + dragon treasure + " gold!"
+            stop
+    
+    # Dragon turn
+    whisper "\n🐉 The dragon attacks!"
+    let dragon_damage be randint(20, 30)
+    
+    when defended is 1:
+        let dragon_damage be dragon_damage / 2
+        whisper "🛡️  Your defense reduces damage!"
+    
+    the player loses dragon_damage health
+    show "💥 You take " + dragon_damage + " damage!"
+    
+    # Check if player defeated
+    is player health less than 1?
+        yes:
+            whisper "\n💀 DEFEAT!"
+            whisper "You have been slain by the dragon..."
+            whisper "GAME OVER"
+            stop
+    
+    whisper "\n"
+
+whisper "\nThanks for playing!"

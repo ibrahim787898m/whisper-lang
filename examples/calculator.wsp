@@ -1,0 +1,16 @@
+# Simple Calculator
+
+whisper "=== Calculator ==="
+
+ask "Enter first number:" into a
+ask "Enter second number:" into b
+
+let sum be a + b
+let diff be a - b
+let prod be a * b
+let quot be a / b
+
+show "Sum: " + sum
+show "Difference: " + diff
+show "Product: " + prod
+show "Quotient: " + quot

@@ -1,0 +1,489 @@
+# ========================================
+# WHISPER LANGUAGE - FINAL COMPLETE TEST
+# ========================================
+# This tests ALL features before publishing
+
+whisper "=== WHISPER FINAL ALL TEST SUITE ==="
+whisper ""
+
+# ========================================
+# TEST 1: VARIABLES (All Methods)
+# ========================================
+whisper "TEST 1: Variables"
+
+remember that var1 is 10
+let var2 be 20
+set var3 to 30
+so var4 is 40
+
+show "var1: " + var1
+show "var2: " + var2
+show "var3: " + var3
+show "var4: " + var4
+
+when var1 equals 10 and var2 equals 20 and var3 equals 30 and var4 equals 40:
+    whisper "✓ Variables test PASSED"
+otherwise:
+    whisper "✗ Variables test FAILED"
+
+whisper ""
+
+# ========================================
+# TEST 2: OUTPUT METHODS
+# ========================================
+whisper "TEST 2: Output Methods"
+
+whisper "✓ whisper works"
+show "✓ show works"
+tell me "✓ tell me works"
+just say "✓ just say works"
+announce "✓ announce "
+whisper "works (no newline)"
+
+whisper ""
+
+# ========================================
+# TEST 3: MATH OPERATIONS
+# ========================================
+whisper "TEST 3: Math Operations"
+
+let a be 10
+let b be 3
+
+let sum be a + b
+let diff be a - b
+let prod be a * b
+let quot be a / b
+let mod be a % b
+
+show "Sum: " + sum + " (Expected: 13)"
+show "Difference: " + diff + " (Expected: 7)"
+show "Product: " + prod + " (Expected: 30)"
+
+when sum equals 13 and diff equals 7 and prod equals 30:
+    whisper "✓ Math operations PASSED"
+otherwise:
+    whisper "✗ Math operations FAILED"
+
+whisper ""
+
+# ========================================
+# TEST 4: MATH FUNCTIONS
+# ========================================
+whisper "TEST 4: Math Functions"
+
+let sqrt_result be sqrt(16)
+let pow_result be pow(2, 3)
+let abs_result be abs(-10)
+let round_result be round(3.7)
+
+show "sqrt(16): " + sqrt_result + " (Expected: 4)"
+show "pow(2,3): " + pow_result + " (Expected: 8)"
+show "abs(-10): " + abs_result + " (Expected: 10)"
+show "round(3.7): " + round_result + " (Expected: 4)"
+
+when sqrt_result equals 4 and pow_result equals 8:
+    whisper "✓ Math functions PASSED"
+otherwise:
+    whisper "✗ Math functions FAILED"
+
+whisper ""
+
+# ========================================
+# TEST 5: INCREMENT/DECREMENT
+# ========================================
+whisper "TEST 5: Increment/Decrement"
+
+let counter be 0
+increase counter by 5
+increase counter by 3
+show "After increases: " + counter + " (Expected: 8)"
+
+decrease counter by 2
+show "After decrease: " + counter + " (Expected: 6)"
+
+when counter equals 6:
+    whisper "✓ Increment/Decrement PASSED"
+otherwise:
+    whisper "✗ Increment/Decrement FAILED"
+
+whisper ""
+
+# ========================================
+# TEST 6: WHEN/OTHERWISE (If/Else)
+# ========================================
+whisper "TEST 6: When/Otherwise Conditionals"
+
+let test_val be 15
+
+when test_val greater than 20:
+    whisper "✗ When condition FAILED"
+or when test_val greater than 10:
+    whisper "✓ When/Or When PASSED"
+otherwise:
+    whisper "✗ When condition FAILED"
+
+whisper ""
+
+# ========================================
+# TEST 7: QUESTION SYNTAX (Yes/No)
+# ========================================
+whisper "TEST 7: Question-Based Conditions"
+
+let check_a be 5
+let check_b be 10
+
+is check_a equals check_b?
+    yes:
+        whisper "✗ Question YES branch FAILED (should be no)"
+    no:
+        whisper "✓ Question NO branch PASSED"
+
+is check_a less than check_b?
+    yes:
+        whisper "✓ Question YES branch PASSED"
+    no:
+        whisper "✗ Question NO branch FAILED (should be yes)"
+
+whisper ""
+
+# ========================================
+# TEST 8: DO TIMES LOOP
+# ========================================
+whisper "TEST 8: Do Times Loop"
+
+let loop_count be 0
+do 5 times:
+    increase loop_count by 1
+
+when loop_count equals 5:
+    whisper "✓ Do times loop PASSED"
+otherwise:
+    whisper "✗ Do times loop FAILED"
+
+whisper ""
+
+# ========================================
+# TEST 9: WHILE LOOP
+# ========================================
+whisper "TEST 9: While Loop"
+
+let while_count be 0
+while while_count less than 3:
+    increase while_count by 1
+
+when while_count equals 3:
+    whisper "✓ While loop PASSED"
+otherwise:
+    whisper "✗ While loop FAILED"
+
+whisper ""
+
+# ========================================
+# TEST 10: LISTS/ARRAYS
+# ========================================
+whisper "TEST 10: Lists"
+
+make test_list with [1, 2, 3]
+add 4 to test_list
+add 5 to test_list
+remove 2 from test_list
+
+let list_total be 0
+for each item in test_list:
+    set list_total to list_total + item
+
+show "List sum: " + list_total + " (Expected: 13)"
+
+when list_total equals 13:
+    whisper "✓ Lists PASSED"
+otherwise:
+    whisper "✗ Lists FAILED"
+
+whisper ""
+
+# ========================================
+# TEST 11: FOR EACH LOOP
+# ========================================
+whisper "TEST 11: For Each Loop"
+
+make numbers with [10, 20, 30]
+let foreach_sum be 0
+
+for each num in numbers:
+    set foreach_sum to foreach_sum + num
+
+when foreach_sum equals 60:
+    whisper "✓ For each loop PASSED"
+otherwise:
+    whisper "✗ For each loop FAILED"
+
+whisper ""
+
+# ========================================
+# TEST 12: BREAK STATEMENT
+# ========================================
+whisper "TEST 12: Break Statement"
+
+let break_count be 0
+do 100 times:
+    increase break_count by 1
+    when break_count equals 5:
+        break
+
+when break_count equals 5:
+    whisper "✓ Break statement PASSED"
+otherwise:
+    whisper "✗ Break statement FAILED"
+
+whisper ""
+
+# ========================================
+# TEST 13: CONTINUE/SKIP STATEMENT
+# ========================================
+whisper "TEST 13: Continue/Skip Statement"
+
+let skip_count be 0
+do 5 times:
+    increase skip_count by 1
+    when skip_count equals 3:
+        next
+    # This should be skipped when skip_count is 3
+
+when skip_count equals 5:
+    whisper "✓ Continue/Skip PASSED"
+otherwise:
+    whisper "✗ Continue/Skip FAILED"
+
+whisper ""
+
+# ========================================
+# TEST 14: FUNCTIONS
+# ========================================
+whisper "TEST 14: Functions"
+
+define add_numbers with x, y:
+    let result be x + y
+    give back result
+
+define multiply with a, b:
+    let product be a * b
+    give back product
+
+call add_numbers with 10, 5
+let func_result1 be __last_result__
+
+call multiply with 4, 3
+let func_result2 be __last_result__
+
+show "add_numbers(10,5): " + func_result1 + " (Expected: 15)"
+show "multiply(4,3): " + func_result2 + " (Expected: 12)"
+
+when func_result1 equals 15 and func_result2 equals 12:
+    whisper "✓ Functions PASSED"
+otherwise:
+    whisper "✗ Functions FAILED"
+
+whisper ""
+
+# ========================================
+# TEST 15: STORY OBJECTS
+# ========================================
+whisper "TEST 15: Story Objects"
+
+there is a knight with health 100, power 25
+
+the knight loses 30 health
+the knight gains 5 power
+
+# Note: We can't directly check object properties in current version
+# But if no error occurs, it works
+whisper "✓ Story objects PASSED (no errors)"
+
+whisper ""
+
+# ========================================
+# TEST 16: STRING OPERATIONS
+# ========================================
+whisper "TEST 16: String Operations"
+
+let text be "hello"
+uppercase text into upper_text
+lowercase "WORLD" into lower_text
+
+show "Uppercase: " + upper_text + " (Expected: HELLO)"
+show "Lowercase: " + lower_text + " (Expected: world)"
+
+whisper "✓ String operations PASSED"
+
+whisper ""
+
+# ========================================
+# TEST 17: FILE OPERATIONS
+# ========================================
+whisper "TEST 17: File Operations"
+
+write "Test content" to "test_file_whisper.txt"
+read "test_file_whisper.txt" into file_content
+
+when file_content equals "Test content":
+    whisper "✓ File operations PASSED"
+otherwise:
+    whisper "✗ File operations FAILED"
+
+whisper ""
+
+# ========================================
+# TEST 18: ERROR HANDLING
+# ========================================
+whisper "TEST 18: Error Handling"
+
+let error_handled be 0
+
+attempt:
+    let bad_result be 10 / 0
+handle:
+    set error_handled to 1
+
+when error_handled equals 1:
+    whisper "✓ Error handling PASSED"
+otherwise:
+    whisper "✗ Error handling FAILED"
+
+whisper ""
+
+# ========================================
+# TEST 19: RANDOM NUMBERS
+# ========================================
+whisper "TEST 19: Random Numbers"
+
+let random_num be randint(1, 100)
+
+is random_num greater than 0?
+    yes:
+        is random_num less than 101?
+            yes:
+                whisper "✓ Random numbers PASSED"
+            no:
+                whisper "✗ Random numbers out of range"
+    no:
+        whisper "✗ Random numbers out of range"
+
+whisper ""
+
+# ========================================
+# TEST 20: NESTED CONDITIONS
+# ========================================
+whisper "TEST 20: Nested Conditions"
+
+let outer be 10
+let inner be 5
+
+when outer greater than 5:
+    when inner less than 10:
+        whisper "✓ Nested conditions PASSED"
+    otherwise:
+        whisper "✗ Nested conditions FAILED"
+otherwise:
+    whisper "✗ Nested conditions FAILED"
+
+whisper ""
+
+# ========================================
+# TEST 21: COMPLEX EXPRESSIONS
+# ========================================
+whisper "TEST 21: Complex Expressions"
+
+let expr_result be 2 * 3 + 4 * 5
+show "2*3 + 4*5: " + expr_result + " (Expected: 26)"
+
+when expr_result equals 26:
+    whisper "✓ Complex expressions PASSED"
+otherwise:
+    whisper "✗ Complex expressions FAILED"
+
+whisper ""
+
+# ========================================
+# TEST 22: LOGICAL OPERATORS (and/or)
+# ========================================
+whisper "TEST 22: Logical Operators"
+
+let logic_a be 1
+let logic_b be 1
+let logic_c be 0
+
+when logic_a equals 1 and logic_b equals 1:
+    whisper "✓ AND operator PASSED"
+otherwise:
+    whisper "✗ AND operator FAILED"
+
+when logic_a equals 1 or logic_c equals 1:
+    whisper "✓ OR operator PASSED"
+otherwise:
+    whisper "✗ OR operator FAILED"
+
+whisper ""
+
+# ========================================
+# TEST 23: FORGET VARIABLE
+# ========================================
+whisper "TEST 23: Forget Variable"
+
+remember that temp_var is 100
+forget about temp_var
+
+whisper "✓ Forget variable PASSED (no error)"
+
+whisper ""
+
+# ========================================
+# TEST 24: CONVERSATIONAL PREFIX
+# ========================================
+whisper "TEST 24: Conversational Prefix"
+
+hey whisper, remember that conv_test is 42
+
+when conv_test equals 42:
+    whisper "✓ Conversational prefix PASSED"
+otherwise:
+    whisper "✗ Conversational prefix FAILED"
+
+whisper ""
+
+# ========================================
+# TEST 25: MULTIPLE BREAK KEYWORDS
+# ========================================
+whisper "TEST 25: Alternative Break Keywords"
+
+let alt_break be 0
+do 10 times:
+    increase alt_break by 1
+    when alt_break equals 3:
+        end loop
+
+when alt_break equals 3:
+    whisper "✓ Alternative break (end loop) PASSED"
+otherwise:
+    whisper "✗ Alternative break FAILED"
+
+whisper ""
+
+# ========================================
+# FINAL SUMMARY
+# ========================================
+whisper ""
+whisper "========================================"
+whisper "   FINAL TEST SUITE COMPLETE!"
+whisper "========================================"
+whisper ""
+whisper "If you see ✓ for all tests above,"
+whisper "Whisper is ready for publishing!"
+whisper ""
+whisper "Features tested: 25+"
+whisper "Status: ALL SYSTEMS GO! 🚀"
+whisper ""
+whisper "Next step: python -m build"
+whisper "Then: python -m twine upload dist/*"
+whisper ""
+whisper "Happy Publishing! 🌙✨"

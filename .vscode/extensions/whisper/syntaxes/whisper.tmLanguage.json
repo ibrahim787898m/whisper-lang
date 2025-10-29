@@ -1,0 +1,212 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Whisper",
+  "scopeName": "source.whisper",
+  "patterns": [
+    { "include": "#comments" },
+    { "include": "#conversational-prefix" },
+    { "include": "#control-flow" },
+    { "include": "#keywords" },
+    { "include": "#story-objects" },
+    { "include": "#functions" },
+    { "include": "#lists" },
+    { "include": "#operators" },
+    { "include": "#strings" },
+    { "include": "#numbers" },
+    { "include": "#variables" }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.number-sign.whisper",
+          "match": "#.*$"
+        }
+      ]
+    },
+    "conversational-prefix": {
+      "patterns": [
+        {
+          "name": "keyword.control.conversational.whisper",
+          "match": "\\b(hey whisper|whisper),\\s*"
+        }
+      ]
+    },
+    "control-flow": {
+      "patterns": [
+        {
+          "name": "keyword.control.conditional.whisper",
+          "match": "\\b(when|or when|otherwise|is|are)\\b"
+        },
+        {
+          "name": "keyword.control.loop.whisper",
+          "match": "\\b(while|do|times|repeat|for each|in)\\b"
+        },
+        {
+          "name": "keyword.control.flow.whisper",
+          "match": "\\b(break|continue|next|skip|stop|end loop|end while|end for|resume while|resume loop|resume for)\\b"
+        },
+        {
+          "name": "keyword.control.conditional.question.whisper",
+          "match": "^\\s*(is|are)\\s+.*\\?\\s*$"
+        },
+        {
+          "name": "keyword.control.answer.whisper",
+          "match": "^\\s*(yes|no):\\s*"
+        }
+      ]
+    },
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.declaration.whisper",
+          "match": "\\b(remember that|let|set|so|forget about)\\b"
+        },
+        {
+          "name": "keyword.other.output.whisper",
+          "match": "\\b(whisper|show|tell me|just say|just tell|announce)\\b"
+        },
+        {
+          "name": "keyword.other.input.whisper",
+          "match": "\\b(ask)\\b.*\\b(into)\\b"
+        },
+        {
+          "name": "keyword.other.list.whisper",
+          "match": "\\b(make|add|remove|to|from)\\b"
+        },
+        {
+          "name": "keyword.other.string.whisper",
+          "match": "\\b(uppercase|lowercase)\\b"
+        },
+        {
+          "name": "keyword.other.file.whisper",
+          "match": "\\b(write|read)\\b.*\\b(to|into|from)\\b"
+        },
+        {
+          "name": "keyword.other.error.whisper",
+          "match": "\\b(attempt|handle|error)\\b"
+        },
+        {
+          "name": "keyword.operator.arithmetic.whisper",
+          "match": "\\b(increase|decrease)\\b.*\\b(by)\\b"
+        },
+        {
+          "name": "keyword.operator.word.whisper",
+          "match": "\\b(is|be|to|with|equals|greater than|less than|bigger than|smaller than|not|and|or)\\b"
+        }
+      ]
+    },
+    "story-objects": {
+      "patterns": [
+        {
+          "name": "keyword.other.story.declaration.whisper",
+          "match": "\\b(there is a|there is an)\\b"
+        },
+        {
+          "name": "keyword.other.story.action.whisper",
+          "match": "\\b(the)\\b.*\\b(loses|gains)\\b"
+        },
+        {
+          "name": "entity.name.type.story-object.whisper",
+          "match": "(?<=there is a |there is an |the )\\w+"
+        }
+      ]
+    },
+    "functions": {
+      "patterns": [
+        {
+          "name": "keyword.control.function.whisper",
+          "match": "\\b(define|call|give back)\\b"
+        },
+        {
+          "name": "entity.name.function.whisper",
+          "match": "(?<=define |call )\\w+"
+        },
+        {
+          "name": "support.function.builtin.whisper",
+          "match": "\\b(sqrt|pow|abs|round|floor|ceil|random|randint|min|max|sum|len|str|list)\\b"
+        }
+      ]
+    },
+    "lists": {
+      "patterns": [
+        {
+          "name": "meta.structure.array.whisper",
+          "begin": "\\[",
+          "end": "\\]",
+          "patterns": [
+            { "include": "#strings" },
+            { "include": "#numbers" },
+            { "include": "#variables" }
+          ]
+        }
+      ]
+    },
+    "operators": {
+      "patterns": [
+        {
+          "name": "keyword.operator.comparison.whisper",
+          "match": "(==|!=|<=|>=|<|>)"
+        },
+        {
+          "name": "keyword.operator.arithmetic.whisper",
+          "match": "(\\+|\\-|\\*|\\/|%)"
+        },
+        {
+          "name": "keyword.operator.assignment.whisper",
+          "match": "="
+        }
+      ]
+    },
+    "strings": {
+      "patterns": [
+        {
+          "name": "string.quoted.double.whisper",
+          "begin": "\"",
+          "end": "\"",
+          "patterns": [
+            {
+              "name": "constant.character.escape.whisper",
+              "match": "\\\\."
+            }
+          ]
+        },
+        {
+          "name": "string.quoted.single.whisper",
+          "begin": "'",
+          "end": "'",
+          "patterns": [
+            {
+              "name": "constant.character.escape.whisper",
+              "match": "\\\\."
+            }
+          ]
+        }
+      ]
+    },
+    "numbers": {
+      "patterns": [
+        {
+          "name": "constant.numeric.float.whisper",
+          "match": "\\b\\d+\\.\\d+\\b"
+        },
+        {
+          "name": "constant.numeric.integer.whisper",
+          "match": "\\b\\d+\\b"
+        }
+      ]
+    },
+    "variables": {
+      "patterns": [
+        {
+          "name": "variable.other.constant.whisper",
+          "match": "\\b__\\w+__\\b"
+        },
+        {
+          "name": "variable.other.whisper",
+          "match": "\\b[a-zA-Z_][a-zA-Z0-9_]*\\b"
+        }
+      ]
+    }
+  }
+}
