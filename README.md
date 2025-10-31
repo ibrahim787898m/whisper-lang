@@ -571,8 +571,6 @@ whisper/
 │   ├── calculator.wsp
 │   ├── guessing_game.wsp
 │   ├── todo_list.wsp
-│   ├── battle_simulation.wsp
-│   ├── file_handling.wsp
 │   ├── story_adventure.wsp
 │   └── rpg_battle.wsp
 │
