@@ -620,7 +620,7 @@ Thanks to all programming language pioneers who made coding more accessible!
 
 - **Author**: Ibrahim Mustafa Opu
 - **Email**: ibrahimmustafa787898@gmail.com
-- **GitHub**: github.com/ibrahim787898m
+- **GitHub**: github.com/mibrahim0pu
 - **Website**: v2.ibrahimmustafaopu.com
 
 ---
