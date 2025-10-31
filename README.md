@@ -3,7 +3,7 @@
 A truly unique programming language with conversational, natural English syntax that makes coding feel like storytelling.
 
 [![PyPI version](https://img.shields.io/pypi/v/whisper-lang)](https://pypi.org/project/whisper-lang/)
-[![VS Code](https://img.shields.io/visual-studio-marketplace/v/YOUR-PUBLISHER.whisper-lang-support)](https://marketplace.visualstudio.com/items?itemName=YOUR-PUBLISHER.whisper-lang-support)
+[![VS Code](https://img.shields.io/visual-studio-marketplace/v/ibrahimmustafaopu.whisper-lang-support)](https://marketplace.visualstudio.com/items?itemName=ibrahimmustafaopu.whisper-lang-support)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python Version](https://img.shields.io/badge/python-3.7+-blue.svg)](https://www.python.org/downloads/)
 [![Downloads](https://pepy.tech/badge/whisper-lang)](https://pepy.tech/project/whisper-lang)
