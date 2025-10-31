@@ -496,8 +496,6 @@ MIT License - see [LICENSE](LICENSE) file for details
 
 ## 🔗 Links
 
-## 🔗 Links
-
 - **Website**: https://whisper.ibrahimmustafaopu.com
 - **Documentation**: https://whisper.ibrahimmustafaopu.com/documentation.html
 - **GitHub**: https://github.com/ibrahim787898m/whisper-lang
@@ -518,8 +516,6 @@ Share your Whisper programs! Tag them with `#WhisperLang`
 - 🔄 Coming soon: More built-in functions
 - 🔄 Coming soon: Package manager
 - 🔄 Coming soon: Standard library
-
-## 🎯 Roadmap
 
 ## 🎯 Roadmap
 
@@ -551,6 +547,52 @@ Share your Whisper programs! Tag them with `#WhisperLang`
 - [ ] API support
 - [ ] Multi-language support
 - [ ] Community plugins system
+
+## Folder Structure
+
+```
+whisper/
+│
+├── .gitignore
+├── CHANGELOG.md
+├── DOCUMENTATION.md
+├── LICENSE
+├── MANIFEST.in
+├── README.md
+├── requirements.txt
+├── setup.py
+│
+├── whisper/
+│   ├── __init__.py
+│   └── interpreter.py
+│
+├── examples/
+│   ├── hello_world.wsp
+│   ├── calculator.wsp
+│   ├── guessing_game.wsp
+│   ├── todo_list.wsp
+│   ├── battle_simulation.wsp
+│   ├── file_handling.wsp
+│   ├── story_adventure.wsp
+│   └── rpg_battle.wsp
+│
+├── tests/
+│   └── test_all.wsp
+│
+└── .vscode/
+    └── extensions/
+        └── whisper/
+            ├── LICENSE
+            ├── README.md
+            ├── package.json
+            ├── language-configuration.json
+            │
+            ├── syntaxes/
+            │   └── whisper.tmLanguage.json
+            │
+            └── images/
+                └── whisper-icon.png
+```
 
 ## ❓ FAQ
 
